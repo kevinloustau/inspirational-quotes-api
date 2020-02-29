@@ -1,1 +1,3 @@
 # meditationquotes
+
+npm run devStart
