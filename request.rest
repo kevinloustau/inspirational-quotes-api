@@ -1,0 +1,25 @@
+GET http://localhost:3000/quotes/
+
+###
+GET http://localhost:3000/quotes/5e5a5934897dd93fd07be33d
+
+###
+POST http://localhost:3000/quotes/
+Content-Type: application/json
+
+{ 
+  "quote" : "salut salut salut salut salut",
+  "author" : "john"
+}
+
+###
+DELETE http://localhost:3000/quotes/XXXXXXX
+
+###
+PATCH http://localhost:3000/quotes/5e5a5934897dd93fd07be33d
+Content-Type: application/json
+
+{ 
+  "quote" : "salut salut salut salut salut",
+  "author" : "Hello"
+}
