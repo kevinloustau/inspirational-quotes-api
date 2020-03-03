@@ -1,4 +1,6 @@
-require('dotenv').config()
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
 
 const express = require('express')
 const app = express()
@@ -25,4 +27,4 @@ app.use('/', indexRouter)
 const quotesRouter = require('./routes/quotes')
 app.use('/quotes', quotesRouter)
 
-app.listen(process.env.PORT || 3000, () => console.log('Started'))
+app.listen(process.env.PORT || 3000, () => console.log('Started, http://localhost:3000'))
