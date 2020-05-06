@@ -13,7 +13,16 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/quotes/XXXXXXX
+POST http://localhost:3000/test
+Content-Type: application/json
+
+{ 
+  "quote" : "yolo",
+  "author" : "john"
+}
+
+###
+DELETE http://localhost:3000/quotes/5eb2ea606649c80f5c6e083f
 
 ###
 PATCH http://localhost:3000/quotes/5e5a5934897dd93fd07be33d
