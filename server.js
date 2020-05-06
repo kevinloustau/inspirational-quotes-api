@@ -16,8 +16,8 @@ app.use(express.static('public'))
 // server
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 const db = mongoose.connection
-db.on('error', e => console.error(e))
-db.once('open', e => console.log('Connected to db'))
+db.on('error', (e) => console.error(e))
+db.once('open', (e) => console.log('Connected to db'))
 
 app.use(express.json())
 
@@ -26,5 +26,11 @@ app.use('/', indexRouter)
 
 const quotesRouter = require('./routes/quotes')
 app.use('/quotes', quotesRouter)
+
+const docRouter = require('./routes/doc')
+app.use('/doc', docRouter)
+
+const loginRouter = require('./routes/login')
+app.use('/login', loginRouter)
 
 app.listen(process.env.PORT || 3000, () => console.log('Started, http://localhost:3000'))
