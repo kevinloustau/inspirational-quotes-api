@@ -27,10 +27,4 @@ app.use('/', indexRouter)
 const quotesRouter = require('./routes/quotes')
 app.use('/quotes', quotesRouter)
 
-const docRouter = require('./routes/doc')
-app.use('/doc', docRouter)
-
-const loginRouter = require('./routes/login')
-app.use('/login', loginRouter)
-
 app.listen(process.env.PORT || 3000, () => console.log('Started, http://localhost:3000'))
