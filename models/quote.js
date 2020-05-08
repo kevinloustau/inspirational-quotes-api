@@ -9,6 +9,11 @@ const quoteSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  createdAt: {
+    type: Date,
+    required: true,
+    default: Date.now,
+  },
 })
 
 module.exports = mongoose.model('Quote', quoteSchema)

@@ -5,7 +5,7 @@ const Quote = require('../models/quote')
 router.get('/', async (req, res) => {
   let quotes
   try {
-    quotes = await Quote.find()
+    quotes = await Quote.find().sort({ createdAt: 'desc' }).exec()
   } catch {
     books = []
   }
