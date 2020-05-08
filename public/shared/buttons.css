@@ -5,23 +5,15 @@ button {
   border: none;
 }
 
-.container-btn-quote {
-  position: absolute;
-  top: 0px;
-  opacity: 0;
-}
-
-.container-btn-quote:hover {
-  opacity: 100;
-}
-
 .btn-quote {
   width: 50px;
   height: 30px;
 }
 
 .btn-copy {
+  background-color: grey;
 }
+
 .btn-edit {
   background-color: green;
 }

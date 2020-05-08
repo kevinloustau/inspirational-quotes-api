@@ -3,9 +3,13 @@
   <p class="quote-quote">"<%= quote.quote %>"</p>
   <p class="quote-author"><%= quote.author %></p>
   <div class="container-btn-quote">
-    <button class="btn-quote btn-copy" name="edit">copy</button>
-    <button class="btn-quote btn-edit" name="edit">edit</button>
-    <button class="btn-quote btn-delete" name="edit">delete</button>
+    <button class="btn-quote btn-copy" action="copy()" name="edit">copy</button>
+    <form method="POST" action="/quotes/<%= quote.id %>/?_method=PUT">
+      <button class="btn-quote btn-edit" name="edit">edit</button>
+    </form>
+    <form method="POST" action="/quotes/<%= quote.id %>/?_method=DELETE">
+      <button class="btn-quote btn-delete" name="edit">delete</button>
+    </form>
   </div>
 </div>
 <% }) %>

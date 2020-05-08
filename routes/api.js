@@ -27,8 +27,7 @@ router.post('/', async (req, res) => {
 
   try {
     const newQuote = await quote.save()
-    // res.status(201).json(newQuote)
-    res.redirect('/add')
+    res.status(201).json(newQuote)
   } catch (err) {
     res.status(400).json({ message: err.message })
   }
@@ -56,8 +55,7 @@ router.patch('/:id', getQuote, async (req, res) => {
 router.delete('/:id', getQuote, async (req, res) => {
   try {
     await res.quote.remove()
-    res.redirect('/')
-    // res.json({ message: `Delete quote: ${req.params.id}` })
+    res.json({ message: `Delete quote: ${req.params.id}` })
   } catch (err) {
     res.status(500).json({ message: err.message })
   }
